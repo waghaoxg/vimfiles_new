@@ -1,0 +1,67 @@
+snippet ifdefv "my if define" b
+#ifdef ${1:MACRO_NAME}
+	${VISUAL:type something here}$0
+#endif // $1
+endsnippet
+
+snippet forit "my forit" b
+for (auto ${2:it} = ${1:name}.begin(); $2 != $1.end(); $2++)
+{
+	$0
+}
+endsnippet
+
+snippet ifs "my ifsteam" b
+std::ifstream ${1:ifile};
+$1.open(${2:file_fullname});
+if (!$1.is_open())
+{
+	std::cout << "error: $1 open failed!" << std::endl;
+}
+endsnippet
+
+snippet ofs "my ifsteam" b
+std::ofstream ${1:ifile};
+$1.open(${2:file_fullname});
+if (!$1.is_open())
+{
+	std::cout << "error: $1 open failed!" << std::endl;
+}
+endsnippet
+
+
+
+snippet header
+// Copyright 2018 Baidu Inc. All Rights Reserved.
+// Author: Wang Haoxing(wanghaoxing@baidu.com)
+//
+endsnippet
+
+snippet hg "my header guard" b
+#ifndef ${1:AR_VPS}_`!v toupper(expand("%:t:r"))`_`!v toupper(expand("%:e"))`
+#define $1_`!v toupper(expand("%:t:r"))`_`!v toupper(expand("%:e"))`
+
+${VISUAL:code here}$0
+
+#endif //$1_`!v toupper(expand("%:t:r"))`_`!v toupper(expand("%:e"))`
+endsnippet
+
+snippet bnamespace "baidu header guard" b
+namespace ${1:arl} {
+namespace ${2:vps} {
+
+${VISUAL:code here}$0
+
+}
+}
+endsnippet
+
+snippet myclass "my class" b
+class ${1:classname} {
+public:
+    $1();
+    ~$1();
+protected:
+private:
+};
+endsnippet
