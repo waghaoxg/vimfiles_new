@@ -121,7 +121,7 @@ if has("win32")
 endif
 
 "--------------------pathogen----------------------
-call pathogen#infect()
+"call pathogen#infect()
 
 "---------------------vim latex -------------------------
 let g:myTexCustomFlag = 0
