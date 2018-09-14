@@ -7,18 +7,16 @@ if has("win32")
 	behave mswin
 "	nmap <silent> <c-Enter> :call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<cr>
     set guifont=consolas:h11
+elseif has("macunix")
+    set guifont=Monaco:h14
 elseif has("unix")
-    set guifont=Droid\ Sans\ Mono\ 10
+    "set guifont=Droid\ Sans\ Mono\ 10
     "set guifont=Monaco:h14
-    "set guifont=DejaVu\ Sans\ Mono\ 11
-	syntax on
-	set showcmd
-"elseif has("macunix")
-"    set guifont=Droid\ Sans\ Mono\ 30
-"    "set guifont=DejaVu\ Sans\ Mono\ 11
-"	syntax on
-"	set showcmd
+    set guifont=DejaVu\ Sans\ Mono\ 11
 endif
+
+syntax on
+set showcmd
 
 "---------vundle------------------
 filetype off                  " required
