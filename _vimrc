@@ -8,8 +8,8 @@ if has("win32")
 "	nmap <silent> <c-Enter> :call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<cr>
     set guifont=consolas:h11
 elseif has("unix")
-    "set guifont=Droid\ Sans\ Mono\ 10
-    set guifont=Monaco:h14
+    set guifont=Droid\ Sans\ Mono\ 10
+    "set guifont=Monaco:h14
     "set guifont=DejaVu\ Sans\ Mono\ 11
 	syntax on
 	set showcmd
