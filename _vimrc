@@ -35,8 +35,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'vimwiki/vimwiki'
-Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline'
 Plugin 'luochen1990/rainbow'
+Plugin 'taglist.vim'
 "Plugin 'Chiel92/vim-autoformat'
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -60,7 +61,8 @@ set fileencodings=utf-8,cp936,ucs-bom
 set wildignorecase
 set wmh=0
 set wmw=0
-
+set laststatus=2
+set statusline=%f "tail of the filename
 "---------------------- set the menu & the message to English----------
 set langmenu=en_US
 let $LANG = 'en_US'
@@ -282,6 +284,7 @@ let Tlist_Show_One_File = 1
 let Tlist_GainFocus_On_ToggleOpen= 1
 nmap <leader>t :TlistOpen<cr>
 nmap <leader>T :TlistClose<cr>
+set statusline=%([%{Tlist_Get_Tagname_By_Line()}][%f]%)
 
 "---------------------------closing------------------------
 inoremap {}      {}<++><Left><Left><Left><Left><Left>
