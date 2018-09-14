@@ -121,7 +121,7 @@ if has("win32")
 endif
 
 "--------------------pathogen----------------------
-"call pathogen#infect()
+call pathogen#infect()
 
 "---------------------vim latex -------------------------
 let g:myTexCustomFlag = 0
@@ -367,4 +367,9 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
 "--------for command -------
-map <F6> :!astyle %<cr>
+nmap <F6> :!astyle %<cr>
+
+" ------for mulitple copy
+map <leader>y "Ay
+map <leader>ay "ay
+vmap <leader>s "ay:let @a.="/"<cr>
