@@ -373,4 +373,6 @@ nmap <F6> :!astyle %<cr>
 " ------for mulitple copy
 map <leader>y "Ay
 map <leader>ay "ay
-vmap <leader>s "ay:let @a.="/"<cr>
+"vmap <leader>as "by"ay:let @a.="/"<cr>
+vmap <silent> <leader>as "by:let @c="/<c-r>b/"<cr>:let @a="<c-r>c"<cr>
+vmap <silent> <leader>s "by:let @a="<c-r>c<c-r>b/gc"<cr>
