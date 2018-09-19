@@ -35,7 +35,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'vimwiki/vimwiki'
-"Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline'
 Plugin 'luochen1990/rainbow'
 Plugin 'taglist.vim'
 "Plugin 'Chiel92/vim-autoformat'
@@ -376,3 +376,15 @@ map <leader>ay "ay
 "vmap <leader>as "by"ay:let @a.="/"<cr>
 vmap <silent> <leader>as "dy:let @c="/<c-r>d/"<cr>:let @a="<c-r>c<c-r>b/gc"<cr>
 vmap <silent> <leader>s "by:let @a="<c-r>c<c-r>b/gc"<cr>
+
+"---------airline--------
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#ycm#enabled = 1
+let g:airline#extensions#ycm#error_symbol = 'E:'
+let g:airline#extensions#ycm#warning_symbol = 'W:'
+
+let g:airline_section_a = '%{Tlist_Get_Tagname_By_Line()}'
+let g:airline_section_x = ''
+let g:airline_section_y = ''
+let g:airline_section_z = ''
+
