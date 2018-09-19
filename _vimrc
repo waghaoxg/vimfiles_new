@@ -390,4 +390,4 @@ let g:airline_section_y = ''
 let g:airline_section_z = ''
 
 "--------autocommand--------
-autocmd FileType cpp :TlistUpdate
+autocmd BufRead,BufWritePost * if &ft == 'cpp' | TlistUpdate | endif
