@@ -285,6 +285,7 @@ let Tlist_GainFocus_On_ToggleOpen= 1
 nmap <leader>t :TlistOpen<cr>
 nmap <leader>T :TlistClose<cr>
 set statusline=%([%{Tlist_Get_Tagname_By_Line()}][%f]%)
+TlistUpdate
 
 "---------------------------closing------------------------
 inoremap {}      {}<++><Left><Left><Left><Left><Left>
@@ -388,3 +389,5 @@ let g:airline_section_x = ''
 let g:airline_section_y = ''
 let g:airline_section_z = ''
 
+"--------autocommand--------
+autocmd FileType cpp :TlistUpdate
