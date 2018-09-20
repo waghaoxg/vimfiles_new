@@ -38,6 +38,7 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'vim-airline/vim-airline'
 Plugin 'luochen1990/rainbow'
 Plugin 'taglist.vim'
+Plugin 'mphe/grayout.vim'
 "Plugin 'Chiel92/vim-autoformat'
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -285,7 +286,8 @@ let Tlist_GainFocus_On_ToggleOpen= 1
 nmap <leader>t :TlistOpen<cr>
 nmap <leader>T :TlistClose<cr>
 set statusline=%([%{Tlist_Get_Tagname_By_Line()}][%f]%)
-TlistUpdate
+map <silent> [[ j:exe '?'.Tlist_Get_Tagname_By_Line()<cr>:nohlsearch<cr>
+map <silent> ]] j:exe '?'.Tlist_Get_Tagname_By_Line()<cr>/{<cr>:nohlsearch<cr>%
 
 "---------------------------closing------------------------
 inoremap {}      {}<++><Left><Left><Left><Left><Left>
@@ -390,4 +392,4 @@ let g:airline_section_y = ''
 let g:airline_section_z = ''
 
 "--------autocommand--------
-autocmd BufRead,BufWritePost * if &ft == 'cpp' | TlistUpdate | endif
+autocmd BufRead,BufWritePost * if &ft == 'cpp' | TlistUpdate  | endif
