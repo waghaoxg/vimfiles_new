@@ -289,7 +289,7 @@ elseif has("unix")
 endif
 "---------------------------Taglist------------------------
 let Tlist_Use_Right_Window = 1
-let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
+"let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 let Tlist_Show_One_File = 1
 let Tlist_GainFocus_On_ToggleOpen= 1
 nmap <leader>t :TlistOpen<cr>
