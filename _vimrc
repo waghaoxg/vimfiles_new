@@ -219,10 +219,11 @@ endif
 "let g:ctrlp_extensions = ['dir']
 
 "--------------------- fzf -------------------------
-nmap <leader>k :History<cr>
-nmap <leader>b :Buffers<cr>
-nmap <leader>h :History:<cr>
+nmap <leader>k :History!<cr>
+nmap <leader>b :Buffers!<cr>
+nmap <leader>h :History!:<cr>
 nmap <leader>f :FZF! 
+nmap <leader>l :Lines!<cr>
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
 "--------------------- netrw-------------------------
