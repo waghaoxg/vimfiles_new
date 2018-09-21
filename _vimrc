@@ -17,15 +17,15 @@ endif
 
 syntax on
 set showcmd
-
 "---------vundle------------------
 filetype off                  " required
+set rtp+=~/.fzf
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'skywind3000/asyncrun.vim'
-Plugin 'kien/ctrlp.vim'
+"Plugin 'kien/ctrlp.vim'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'haya14busa/incsearch-fuzzy.vim'
 Plugin 'haya14busa/vim-asterisk'
@@ -39,6 +39,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'luochen1990/rainbow'
 Plugin 'taglist.vim'
 Plugin 'mphe/grayout.vim'
+Plugin 'junegunn/fzf.vim'
 "Plugin 'Chiel92/vim-autoformat'
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -207,15 +208,22 @@ endif
 "	map <silent> <leader>k :so $HOME\tempNotes.vim<cr>
 "endif
 "--------------------- ctrlp-------------------------
-let g:ctrlp_map = '<leader>k'
-let g:ctrlp_by_filename = 0
-let g:ctrlp_regexp = 1
-let g:ctrlp_cmd = 'CtrlPMRUFiles'
-let g:ctrlp_mruf_case_sensitive = 0
-nmap <leader>b :CtrlPBuffer<cr>
-nmap <leader>f :CtrlP<cr>
-let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:100,results:150'
-let g:ctrlp_extensions = ['dir']
+"let g:ctrlp_map = '<leader>k'
+"let g:ctrlp_by_filename = 0
+"let g:ctrlp_regexp = 1
+"let g:ctrlp_cmd = 'CtrlPMRUFiles'
+"let g:ctrlp_mruf_case_sensitive = 0
+"nmap <leader>b :CtrlPBuffer<cr>
+"nmap <leader>f :CtrlP<cr>
+"let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:100,results:150'
+"let g:ctrlp_extensions = ['dir']
+
+"--------------------- fzf -------------------------
+nmap <leader>k :History<cr>
+nmap <leader>b :Buffers<cr>
+nmap <leader>h :History:<cr>
+nmap <leader>f :FZF! 
+imap <c-x><c-l> <plug>(fzf-complete-line)
 
 "--------------------- netrw-------------------------
 let g:netrw_altv          = 1
@@ -350,7 +358,7 @@ map #   <Plug>(asterisk-#)
 "-------asyrun--------------------
 let g:asyncrun_bell=1 
 map <leader>! :AsyncRun 
-map <leader>1 :AsyncRun 
+"map <leader>1 :AsyncRun 
 
 "--------for rainbow-------
 let g:rainbow_active = 0
@@ -390,6 +398,7 @@ let g:airline_section_a = '%{Tlist_Get_Tagname_By_Line()}'
 let g:airline_section_x = ''
 let g:airline_section_y = ''
 let g:airline_section_z = ''
+
 
 "--------autocommand--------
 autocmd BufRead,BufWritePost * if &ft == 'cpp' | TlistUpdate  | endif
