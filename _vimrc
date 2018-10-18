@@ -71,6 +71,8 @@ let $LANG = 'en_US'
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
+nmap (( 0f(vi(
+
 "--------------edit vimrc------------------
 nmap <F12> :vs $MYVIMRC<cr>
 
