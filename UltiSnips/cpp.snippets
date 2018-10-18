@@ -72,3 +72,12 @@ for (${1:int} i = 0; i < ${2:N}; i++)
     $0
 }
 endsnippet
+
+snippet funlog "function with glog" b
+$0${VISUAL:void func()}
+{
+	${1:LOG(INFO)} << "entering ${VISUAL}$2";
+
+	$1 << "leaving ${VISUAL}$2";
+}
+endsnippet

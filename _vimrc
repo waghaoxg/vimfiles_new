@@ -295,8 +295,9 @@ let Tlist_GainFocus_On_ToggleOpen= 1
 nmap <leader>t :TlistOpen<cr>
 nmap <leader>T :TlistClose<cr>
 set statusline=%([%{Tlist_Get_Tagname_By_Line()}][%f]%)
-map <silent> [[ j:exe '?'.Tlist_Get_Tagname_By_Line()<cr>:nohlsearch<cr>
-map <silent> ]] j:exe '?'.Tlist_Get_Tagname_By_Line()<cr>/{<cr>:nohlsearch<cr>%
+
+map <silent> [[ :TlistOpen<cr><cr>:TlistClose<cr>
+map <silent> ]] :TlistOpen<cr><cr>:TlistClose<cr>/{<cr>:nohlsearch<cr>%
 
 "---------------------------closing------------------------
 inoremap {}      {}<++><Left><Left><Left><Left><Left>
