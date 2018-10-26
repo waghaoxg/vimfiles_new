@@ -66,6 +66,8 @@ set wmh=0
 set wmw=0
 set laststatus=2
 set statusline=%f "tail of the filename
+set undofile
+set undodir=~/undodir
 "---------------------- set the menu & the message to English----------
 set langmenu=en_US
 let $LANG = 'en_US'
