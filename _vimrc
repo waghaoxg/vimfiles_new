@@ -40,6 +40,7 @@ Plugin 'luochen1990/rainbow'
 Plugin 'taglist.vim'
 Plugin 'mphe/grayout.vim'
 Plugin 'junegunn/fzf.vim'
+Plugin 'tpope/vim-obsession'
 "Plugin 'Chiel92/vim-autoformat'
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -401,7 +402,7 @@ let g:airline#extensions#ycm#warning_symbol = 'W:'
 let g:airline_section_a = '%{Tlist_Get_Tagname_By_Line()}'
 let g:airline_section_x = ''
 let g:airline_section_y = ''
-let g:airline_section_z = ''
+let g:airline_section_z = '%{ObsessionStatus()}'
 
 
 "--------autocommand--------
