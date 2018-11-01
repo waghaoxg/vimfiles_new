@@ -229,6 +229,7 @@ nmap <leader>b :Buffers!<cr>
 nmap <leader>h :History!:<cr>
 nmap <leader>f :FZF! 
 nmap <leader>l :Lines!<cr>
+nmap <leader>: :Commands!<cr>
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
 "--------------------- netrw-------------------------
