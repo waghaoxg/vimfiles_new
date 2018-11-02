@@ -41,6 +41,7 @@ Plugin 'taglist.vim'
 Plugin 'mphe/grayout.vim'
 Plugin 'junegunn/fzf.vim'
 Plugin 'tpope/vim-obsession'
+Plugin 't9md/vim-choosewin'
 "Plugin 'Chiel92/vim-autoformat'
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -229,7 +230,7 @@ nmap <leader>b :Buffers!<cr>
 nmap <leader>h :History!:<cr>
 nmap <leader>f :FZF! 
 nmap <leader>l :Lines!<cr>
-nmap <leader>: :Commands!<cr>
+nmap :: :Commands!<cr>
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
 "--------------------- netrw-------------------------
@@ -407,6 +408,9 @@ let g:airline_section_x = ''
 let g:airline_section_y = ''
 let g:airline_section_z = '%{ObsessionStatus()}'
 
+"----------choosewin-------------
+nmap - <Plug>(choosewin)
+let g:choosewin_overlay_enable = 1
 
 "--------autocommand--------
 autocmd BufRead,BufWritePost * if &ft == 'cpp' | TlistUpdate  | endif
