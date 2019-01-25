@@ -193,6 +193,8 @@ elseif has("unix")
 endif
 "---------------------YouCompleteMe-------------------------
 "if has("unix")
+
+    let g:ycm_max_diagnostics_to_disply = 0
 	nnoremap <c-k> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 	"g:ycm_global_ycm_extra_conf = '/home/...'   "put the default .ycm_extra_conf.py
 	let g:ycm_autoclose_preview_window_after_completion = 1 "for preview window
@@ -421,7 +423,15 @@ let g:airline_section_z = '%{ObsessionStatus()}'
 
 "----------choosewin-------------
 nmap - <Plug>(choosewin)
-"let g:choosewin_overlay_enable = 1
+let g:choosewin_overlay_enable = 1
+
+"-------------grayout--------------------
+if has("macunix")
+    " do nothing, use the default
+elseif has("unix")
+    let g:grayout_cmd_line_copy = '/home/whx/software/llvm/clang+llvm-7.0.0-x86_64-linux-gnu-ubuntu-16.04/bin/clang -x c++ -w -P -E -'
+    let g:grayout_cmd_line = g:grayout_cmd_line_copy
+endif
 
 "--------autocommand--------
 autocmd BufRead,BufWritePost * if &ft == 'cpp' | TlistUpdate  | endif
