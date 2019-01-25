@@ -42,6 +42,8 @@ Plugin 'mphe/grayout.vim'
 Plugin 'junegunn/fzf.vim'
 Plugin 'tpope/vim-obsession'
 Plugin 't9md/vim-choosewin'
+Plugin 'lervag/vimtex'
+"Plugin 'vim-latex/vim-latex'
 "Plugin 'Chiel92/vim-autoformat'
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -52,6 +54,7 @@ filetype plugin indent on    " required
 set ignorecase
 set smartcase
 set nu
+set relativenumber
 colorscheme molokai
 set tabstop=4
 set shiftwidth=4
@@ -131,37 +134,45 @@ endif
 "--------------------pathogen----------------------
 "call pathogen#infect()
 
-"---------------------vim latex -------------------------
-let g:myTexCustomFlag = 0
-" REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
-
-" IMPORTANT: win32 users will need to have 'shellslash' set so that latex
-" can be called correctly.
-set shellslash
-
-" IMPORTANT: grep will sometimes skip displaying the file name if you
-" search in a singe file. This will confuse Latex-Suite. Set your grep
-" program to always generate a file-name.
+"----------------------vimtex------------------------
 if has("win32")
-	set grepprg=findstr\ /n\ /S\ $* 
+elseif has("macunix")
+let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSupport/displayline'
+let g:vimtex_view_general_options = '-r @line @pdf @tex'
+let g:vimtex_fold_enabled = 0 "So large files can open more easily
 elseif has("unix")
-	set grepprg=grep\ -nrH\ --exclude=Session.vim\ --exclude=viminfo\ $*
 endif
-
-" OPTIONAL: This enables automatic indentation as you type.  
-filetype indent on
-
-" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
-" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
-" The following changes the default filetype back to 'tex':
-let g:tex_flavor='latex'
-let g:Tex_DefaultTargetFormat = 'pdf'
-if has("win32")
-	let g:Tex_ViewRule_pdf =  '"d:\Program Files\SumatraPDF\SumatraPDF.exe" -reuse-instance'
-elseif has("unix")
-	let g:Tex_ViewRule_pdf =  'evince'
-	let g:Tex_GotoError=0
-endif
+""---------------------vim latex -------------------------
+"let g:myTexCustomFlag = 0
+"" REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
+"
+"" IMPORTANT: win32 users will need to have 'shellslash' set so that latex
+"" can be called correctly.
+"set shellslash
+"
+"" IMPORTANT: grep will sometimes skip displaying the file name if you
+"" search in a singe file. This will confuse Latex-Suite. Set your grep
+"" program to always generate a file-name.
+"if has("win32")
+"	set grepprg=findstr\ /n\ /S\ $* 
+"elseif has("unix")
+"	set grepprg=grep\ -nrH\ --exclude=Session.vim\ --exclude=viminfo\ $*
+"endif
+"
+"" OPTIONAL: This enables automatic indentation as you type.  
+"filetype indent on
+"
+"" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+"" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+"" The following changes the default filetype back to 'tex':
+"let g:tex_flavor='latex'
+"let g:Tex_DefaultTargetFormat = 'pdf'
+"if has("win32")
+"	let g:Tex_ViewRule_pdf =  '"d:\Program Files\SumatraPDF\SumatraPDF.exe" -reuse-instance'
+"elseif has("unix")
+"	let g:Tex_ViewRule_pdf =  'evince'
+"	let g:Tex_GotoError=0
+"endif
  
 "--------------------- clang_completion-------------------------
 if has("win32")
@@ -410,7 +421,7 @@ let g:airline_section_z = '%{ObsessionStatus()}'
 
 "----------choosewin-------------
 nmap - <Plug>(choosewin)
-let g:choosewin_overlay_enable = 1
+"let g:choosewin_overlay_enable = 1
 
 "--------autocommand--------
 autocmd BufRead,BufWritePost * if &ft == 'cpp' | TlistUpdate  | endif
