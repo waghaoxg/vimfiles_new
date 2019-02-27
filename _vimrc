@@ -142,6 +142,7 @@ let g:vimtex_view_general_options = '-r @line @pdf @tex'
 let g:vimtex_fold_enabled = 0 "So large files can open more easily
 elseif has("unix")
 endif
+let g:vimtex_latexmk_continuous = 0
 ""---------------------vim latex -------------------------
 "let g:myTexCustomFlag = 0
 "" REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
@@ -355,16 +356,33 @@ map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
-map // <Plug>(incsearch-fuzzy-/)
+map /// <Plug>(incsearch-fuzzy-/)
 "map z? <Plug>(incsearch-fuzzy-?)
 map g// <Plug>(incsearch-fuzzy-stay)
 
 "----------------- for easy motion----------
-"map // <Plug>(easymotion-sn)
-map f/ <Plug>(easymotion-s2)
+map // <Plug>(easymotion-sn)
+"map // <Plug>(easymotion-s2)
 "map /1 <Plug>(easymotion-s)
 let g:EasyMotion_smartcase = 1
 
+map f <Plug>(easymotion-f)
+map F <Plug>(easymotion-F)
+map t <Plug>(easymotion-t)
+map T <Plug>(easymotion-T)
+map w <Plug>(easymotion-w)
+map W <Plug>(easymotion-W)
+map b <Plug>(easymotion-b)
+map B <Plug>(easymotion-B)
+map e <Plug>(easymotion-e)
+map E <Plug>(easymotion-E)
+"map    <Plug>(easymotion-ge)
+"map    <Plug>(easymotion-gE)
+"map    <Plug>(easymotion-j) 
+"map    <Plug>(easymotion-k) 
+"map    <Plug>(easymotion-n) 
+"map    <Plug>(easymotion-N) 
+"map    <Plug>(easymotion-s) 
 "----------------- vim-asterisk----------
 map *   <Plug>(asterisk-*)
 map #   <Plug>(asterisk-#)
