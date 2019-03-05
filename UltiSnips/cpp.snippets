@@ -46,6 +46,15 @@ ${VISUAL:code here}$0
 #endif //$1_`!v toupper(expand("%:t:r"))`_`!v toupper(expand("%:e"))`
 endsnippet
 
+snippet hg_artracker "my header guard" b
+#ifndef ${1:ARTRACKER}_`!v toupper(expand("%:t:r"))`_`!v toupper(expand("%:e"))`
+#define $1_`!v toupper(expand("%:t:r"))`_`!v toupper(expand("%:e"))`
+
+${VISUAL:code here}$0
+
+#endif //$1_`!v toupper(expand("%:t:r"))`_`!v toupper(expand("%:e"))`
+endsnippet
+
 snippet bnamespace "baidu header guard" b
 namespace ${1:arl} {
 namespace ${2:vps} {
@@ -53,6 +62,14 @@ namespace ${2:vps} {
 ${VISUAL:code here}$0
 
 }
+}
+endsnippet
+
+snippet namespace_artracker "baidu header guard" b
+namespace ${1:ar_tracker} {
+
+${VISUAL:code here}$0
+
 }
 endsnippet
 
