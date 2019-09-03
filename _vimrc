@@ -9,14 +9,14 @@ if has("win32")
     set guifont=consolas:h11
 elseif has("macunix")
     set guifont=Monaco:h16
-elseif has("unix")
-    "set guifont=Droid\ Sans\ Mono\ 10
-    "set guifont=Monaco:h14
-    set guifont=DejaVu\ Sans\ Mono\ 11
-endif
-
-syntax on
-set showcmd
+elseif has("unix")                                 
+    "set guifont=Droid\ Sans\ Mono\ 10             
+    "set guifont=Monaco:h14                        
+    set guifont=DejaVu\ Sans\ Mono\ 11             
+endif                                              
+                                                   
+syntax on                                          
+set showcmd                                        
 "---------vundle------------------
 filetype off                  " required
 set rtp+=~/.fzf
@@ -456,6 +456,11 @@ endif
 "------------gutentags---------------
 "let g:gutentags_cache_dir='~/tag_cache'
 let g:gutentags_exclude_filetypes=['bin', 'build', 'cmake', 'depend', 'maplab_package', 'org', 'txt', 'html', 'js', 'f', 'submodules', 'swp', 'swo']
+"let g:gutentags_define_advanced_commands=1
+"let g:gutentags_enabled=0
+let g:gutentags_add_default_project_roots=0
+let g:gutentags_project_root=['.addtags']
+nmap gA :exe "tag ".expand('%:t:r').".
 
 "--------autocommand--------
 autocmd BufRead,BufWritePost * if &ft == 'cpp' | TlistUpdate  | endif
