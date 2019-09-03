@@ -38,7 +38,7 @@ snippet header
 endsnippet
 
 snippet hg "my header guard" b
-#ifndef ${1:AR_VPS}_`!v toupper(expand("%:t:r"))`_`!v toupper(expand("%:e"))`
+#ifndef ${1:AR_VPAS}_`!v toupper(expand("%:t:r"))`_`!v toupper(expand("%:e"))`
 #define $1_`!v toupper(expand("%:t:r"))`_`!v toupper(expand("%:e"))`
 
 ${VISUAL:code here}$0
@@ -48,7 +48,7 @@ endsnippet
 
 snippet bnamespace "baidu header guard" b
 namespace ${1:arl} {
-namespace ${2:vps} {
+namespace ${2:vpas} {
 
 ${VISUAL:code here}$0
 

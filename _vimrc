@@ -43,6 +43,7 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'tpope/vim-obsession'
 Plugin 't9md/vim-choosewin'
 Plugin 'lervag/vimtex'
+Plugin 'ludovicchabant/vim-gutentags'
 "Plugin 'vim-latex/vim-latex'
 "Plugin 'Chiel92/vim-autoformat'
 call vundle#end()            " required
@@ -117,7 +118,7 @@ if has("unix")
 endif
 
 "--------------coding------------------
-map <S-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q
+map <S-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+fq .
 
 "--------------supertab------------------
 if has("win32")
@@ -200,6 +201,7 @@ endif
 	"g:ycm_global_ycm_extra_conf = '/home/...'   "put the default .ycm_extra_conf.py
 	let g:ycm_autoclose_preview_window_after_completion = 1 "for preview window
 	"let g:ycm_autoclose_preview_window_after_insertion = 1 "for preview window
+    let g:ycm_max_diagnostics_to_display=0
 	"
 	"disable preview window
 	"set completeopt-=preview 
@@ -372,12 +374,12 @@ map f <Plug>(easymotion-f)
 map F <Plug>(easymotion-F)
 map t <Plug>(easymotion-t)
 map T <Plug>(easymotion-T)
-map w <Plug>(easymotion-w)
-map W <Plug>(easymotion-W)
-map b <Plug>(easymotion-b)
-map B <Plug>(easymotion-B)
-map e <Plug>(easymotion-e)
-map E <Plug>(easymotion-E)
+"map w <Plug>(easymotion-w)
+"map W <Plug>(easymotion-W)
+"map b <Plug>(easymotion-b)
+"map B <Plug>(easymotion-B)
+"map e <Plug>(easymotion-e)
+"map E <Plug>(easymotion-E)
 "map    <Plug>(easymotion-ge)
 "map    <Plug>(easymotion-gE)
 "map    <Plug>(easymotion-j) 
@@ -436,7 +438,7 @@ let g:airline#extensions#ycm#warning_symbol = 'W:'
 
 let g:airline_section_a = '%{Tlist_Get_Tagname_By_Line()}'
 let g:airline_section_x = ''
-let g:airline_section_y = ''
+let g:airline_section_y = '%{gutentags#statusline()}'
 let g:airline_section_z = '%{ObsessionStatus()}'
 
 "----------choosewin-------------
@@ -450,6 +452,10 @@ elseif has("unix")
     let g:grayout_cmd_line_copy = '/home/whx/software/llvm/clang+llvm-7.0.0-x86_64-linux-gnu-ubuntu-16.04/bin/clang -x c++ -w -P -E -'
     let g:grayout_cmd_line = g:grayout_cmd_line_copy
 endif
+
+"------------gutentags---------------
+"let g:gutentags_cache_dir='~/tag_cache'
+let g:gutentags_exclude_filetypes=['bin', 'build', 'cmake', 'depend', 'maplab_package', 'org', 'txt', 'html', 'js', 'f', 'submodules', 'swp', 'swo']
 
 "--------autocommand--------
 autocmd BufRead,BufWritePost * if &ft == 'cpp' | TlistUpdate  | endif
