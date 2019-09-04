@@ -9,14 +9,14 @@ if has("win32")
     set guifont=consolas:h11
 elseif has("macunix")
     set guifont=Monaco:h16
-elseif has("unix")                                 
-    "set guifont=Droid\ Sans\ Mono\ 10             
-    "set guifont=Monaco:h14                        
-    set guifont=DejaVu\ Sans\ Mono\ 11             
+elseif has("unix")
+    "set guifont=Droid\ Sans\ Mono\ 10
+    "set guifont=Monaco:h14
+    set guifont=DejaVu\ Sans\ Mono\ 11
 endif                                              
-                                                   
-syntax on                                          
-set showcmd                                        
+
+syntax on
+set showcmd
 "---------vundle------------------
 filetype off                  " required
 set rtp+=~/.fzf
@@ -44,6 +44,10 @@ Plugin 'tpope/vim-obsession'
 Plugin 't9md/vim-choosewin'
 Plugin 'lervag/vimtex'
 Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'mhinz/vim-signify'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-scripts/Tabmerge'
+Plugin 'mkitt/tabline.vim'
 "Plugin 'vim-latex/vim-latex'
 "Plugin 'Chiel92/vim-autoformat'
 call vundle#end()            " required
@@ -102,7 +106,6 @@ map <silent> <F2> :if &guioptions =~# 'm' <Bar>
 
 set guioptions+=c
 set guioptions-=e
-
 "--------------navigation------------------
 "imap <A-h> <ESC>ha
 "imap <A-j> <ESC>gja
@@ -155,11 +158,11 @@ let g:vimtex_latexmk_continuous = 0
 "" IMPORTANT: grep will sometimes skip displaying the file name if you
 "" search in a singe file. This will confuse Latex-Suite. Set your grep
 "" program to always generate a file-name.
-"if has("win32")
-"	set grepprg=findstr\ /n\ /S\ $* 
-"elseif has("unix")
-"	set grepprg=grep\ -nrH\ --exclude=Session.vim\ --exclude=viminfo\ $*
-"endif
+if has("win32")
+	set grepprg=findstr\ /n\ /S\ $* 
+elseif has("unix")
+	set grepprg=grep\ -nrH\ --exclude=Session.vim\ --exclude=viminfo\ $*
+endif
 "
 "" OPTIONAL: This enables automatic indentation as you type.  
 "filetype indent on
@@ -461,6 +464,10 @@ let g:gutentags_exclude_filetypes=['bin', 'build', 'cmake', 'depend', 'maplab_pa
 let g:gutentags_add_default_project_roots=0
 let g:gutentags_project_root=['.addtags']
 nmap gA :exe "tag ".expand('%:t:r').".
+"--------nerdtree-----------
+nmap <leader>a :NERDTreeFind<cr>
+nmap <leader>z :NERDTreeCWD<cr>
+nmap <leader>v :NERDTreeToggle<cr>
 
 "--------autocommand--------
 autocmd BufRead,BufWritePost * if &ft == 'cpp' | TlistUpdate  | endif
