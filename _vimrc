@@ -45,9 +45,9 @@ Plugin 't9md/vim-choosewin'
 Plugin 'lervag/vimtex'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'mhinz/vim-signify'
-Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/Tabmerge'
 Plugin 'mkitt/tabline.vim'
+Plugin 'tpope/vim-vinegar'
 "Plugin 'vim-latex/vim-latex'
 "Plugin 'Chiel92/vim-autoformat'
 call vundle#end()            " required
@@ -445,7 +445,7 @@ let g:airline_section_y = '%{gutentags#statusline()}'
 let g:airline_section_z = '%{ObsessionStatus()}'
 
 "----------choosewin-------------
-nmap - <Plug>(choosewin)
+nmap \ <Plug>(choosewin)
 let g:choosewin_overlay_enable = 1
 
 "-------------grayout--------------------
@@ -464,10 +464,13 @@ let g:gutentags_exclude_filetypes=['bin', 'build', 'cmake', 'depend', 'maplab_pa
 let g:gutentags_add_default_project_roots=0
 let g:gutentags_project_root=['.addtags']
 nmap gA :exe "tag ".expand('%:t:r').".
-"--------nerdtree-----------
-nmap <leader>a :NERDTreeFind<cr>
-nmap <leader>z :NERDTreeCWD<cr>
-nmap <leader>v :NERDTreeToggle<cr>
+""--------nerdtree-----------
+"nmap <leader>a :NERDTreeFind<cr>
+"nmap <leader>z :NERDTreeCWD<cr>
+"nmap <leader>v :NERDTreeToggle<cr>
 
 "--------autocommand--------
 autocmd BufRead,BufWritePost * if &ft == 'cpp' | TlistUpdate  | endif
+
+"-----------------
+cmap wo windo 
