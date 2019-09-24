@@ -13,7 +13,7 @@ elseif has("unix")
     "set guifont=Droid\ Sans\ Mono\ 10
     "set guifont=Monaco:h14
     set guifont=DejaVu\ Sans\ Mono\ 11
-endif
+endif                                              
 
 syntax on
 set showcmd
@@ -43,6 +43,11 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'tpope/vim-obsession'
 Plugin 't9md/vim-choosewin'
 Plugin 'lervag/vimtex'
+Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'mhinz/vim-signify'
+Plugin 'vim-scripts/Tabmerge'
+Plugin 'mkitt/tabline.vim'
+Plugin 'tpope/vim-vinegar'
 "Plugin 'vim-latex/vim-latex'
 "Plugin 'Chiel92/vim-autoformat'
 call vundle#end()            " required
@@ -101,7 +106,6 @@ map <silent> <F2> :if &guioptions =~# 'm' <Bar>
 
 set guioptions+=c
 set guioptions-=e
-
 "--------------navigation------------------
 "imap <A-h> <ESC>ha
 "imap <A-j> <ESC>gja
@@ -117,7 +121,7 @@ if has("unix")
 endif
 
 "--------------coding------------------
-map <S-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q
+map <S-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+fq .
 
 "--------------supertab------------------
 if has("win32")
@@ -154,11 +158,11 @@ let g:vimtex_latexmk_continuous = 0
 "" IMPORTANT: grep will sometimes skip displaying the file name if you
 "" search in a singe file. This will confuse Latex-Suite. Set your grep
 "" program to always generate a file-name.
-"if has("win32")
-"	set grepprg=findstr\ /n\ /S\ $* 
-"elseif has("unix")
-"	set grepprg=grep\ -nrH\ --exclude=Session.vim\ --exclude=viminfo\ $*
-"endif
+if has("win32")
+	set grepprg=findstr\ /n\ /S\ $* 
+elseif has("unix")
+	set grepprg=grep\ -nrH\ --exclude=Session.vim\ --exclude=viminfo\ $*
+endif
 "
 "" OPTIONAL: This enables automatic indentation as you type.  
 "filetype indent on
@@ -200,6 +204,7 @@ endif
 	"g:ycm_global_ycm_extra_conf = '/home/...'   "put the default .ycm_extra_conf.py
 	let g:ycm_autoclose_preview_window_after_completion = 1 "for preview window
 	"let g:ycm_autoclose_preview_window_after_insertion = 1 "for preview window
+    let g:ycm_max_diagnostics_to_display=0
 	"
 	"disable preview window
 	"set completeopt-=preview 
@@ -368,23 +373,24 @@ map // <Plug>(easymotion-sn)
 "map /1 <Plug>(easymotion-s)
 let g:EasyMotion_smartcase = 1
 
-map f <Plug>(easymotion-f)
-map F <Plug>(easymotion-F)
-map t <Plug>(easymotion-t)
-map T <Plug>(easymotion-T)
-map w <Plug>(easymotion-w)
-map W <Plug>(easymotion-W)
-map b <Plug>(easymotion-b)
-map B <Plug>(easymotion-B)
-map e <Plug>(easymotion-e)
-map E <Plug>(easymotion-E)
+"map f M<Plug>(easymotion-f)
+"map F <Plug>(easymotion-F)
+"map t <Plug>(easymotion-t)
+"map T <Plug>(easymotion-T)
+"map w <Plug>(easymotion-w)
+"map W <Plug>(easymotion-W)
+"map b <Plug>(easymotion-b)
+"map B <Plug>(easymotion-B)
+"map e <Plug>(easymotion-e)
+"map E <Plug>(easymotion-E)
 "map    <Plug>(easymotion-ge)
 "map    <Plug>(easymotion-gE)
 "map    <Plug>(easymotion-j) 
 "map    <Plug>(easymotion-k) 
 "map    <Plug>(easymotion-n) 
 "map    <Plug>(easymotion-N) 
-"map    <Plug>(easymotion-s) 
+map t H13j<Plug>(easymotion-s)
+map f L13k<Plug>(easymotion-s)
 "----------------- vim-asterisk----------
 map *   <Plug>(asterisk-*)
 map #   <Plug>(asterisk-#)
@@ -436,11 +442,11 @@ let g:airline#extensions#ycm#warning_symbol = 'W:'
 
 let g:airline_section_a = '%{Tlist_Get_Tagname_By_Line()}'
 let g:airline_section_x = ''
-let g:airline_section_y = ''
+let g:airline_section_y = '%{gutentags#statusline()}'
 let g:airline_section_z = '%{ObsessionStatus()}'
 
 "----------choosewin-------------
-nmap - <Plug>(choosewin)
+nmap \ <Plug>(choosewin)
 let g:choosewin_overlay_enable = 1
 
 "-------------grayout--------------------
@@ -451,5 +457,22 @@ elseif has("unix")
     let g:grayout_cmd_line = g:grayout_cmd_line_copy
 endif
 
+"------------gutentags---------------
+"let g:gutentags_cache_dir='~/tag_cache'
+let g:gutentags_exclude_filetypes=['bin', 'build', 'cmake', 'depend', 'maplab_package', 'org', 'txt', 'html', 'js', 'f', 'submodules', 'swp', 'swo']
+"let g:gutentags_define_advanced_commands=1
+"let g:gutentags_enabled=0
+let g:gutentags_add_default_project_roots=0
+let g:gutentags_project_root=['.addtags']
+nmap gA :exe "tag ".expand('%:t:r').".
+""--------nerdtree-----------
+"nmap <leader>a :NERDTreeFind<cr>
+"nmap <leader>z :NERDTreeCWD<cr>
+"nmap <leader>v :NERDTreeToggle<cr>
+
 "--------autocommand--------
 autocmd BufRead,BufWritePost * if &ft == 'cpp' | TlistUpdate  | endif
+
+"-----------------
+cmap wo windo 
+cmap  <silent> yy let @+=expand("%:p")<CR>
