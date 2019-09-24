@@ -474,3 +474,4 @@ autocmd BufRead,BufWritePost * if &ft == 'cpp' | TlistUpdate  | endif
 
 "-----------------
 cmap wo windo 
+autocmd filetype netrw nmap <silent> yy :let @+=expand("%:p").getline(".")<CR>
