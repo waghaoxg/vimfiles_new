@@ -368,6 +368,8 @@ map /// <Plug>(incsearch-fuzzy-/)
 map g// <Plug>(incsearch-fuzzy-stay)
 
 "----------------- for easy motion----------
+"g:EasyMotion_do_shade = 0
+let g:EasyMotion_enter_jump_first = 1
 map // <Plug>(easymotion-sn)
 "map // <Plug>(easymotion-s2)
 "map /1 <Plug>(easymotion-s)
@@ -389,8 +391,8 @@ let g:EasyMotion_smartcase = 1
 "map    <Plug>(easymotion-k) 
 "map    <Plug>(easymotion-n) 
 "map    <Plug>(easymotion-N) 
-map t H13j<Plug>(easymotion-s)
-map f L13k<Plug>(easymotion-s)
+"map t H13j<Plug>(easymotion-s)
+"map f L13k<Plug>(easymotion-s)
 "----------------- vim-asterisk----------
 map *   <Plug>(asterisk-*)
 map #   <Plug>(asterisk-#)
