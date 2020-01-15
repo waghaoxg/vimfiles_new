@@ -48,6 +48,10 @@ Plugin 'mhinz/vim-signify'
 Plugin 'vim-scripts/Tabmerge'
 Plugin 'mkitt/tabline.vim'
 Plugin 'tpope/vim-vinegar'
+Plugin 'pbogut/fzf-mru.vim'
+Plugin 'rking/ag.vim'
+Plugin 'kshenoy/vim-signature'
+"Plugin 'tpope/vim-eunuch'
 "Plugin 'vim-latex/vim-latex'
 "Plugin 'Chiel92/vim-autoformat'
 call vundle#end()            " required
@@ -93,7 +97,8 @@ nmap <F12> :vs $MYVIMRC<cr>
 nmap <silent> <leader>s :call whx#autoMKSession#AutoMKS()<cr>
 
 "--------------layout------------------
-nmap <silent> <C-w>x :resize 9999\|vert resize 9999<cr>
+nmap <silent> <C-x> :resize 9999\|vert resize 9999<cr>
+nmap <silent> <C-c> <C-w>=
 
 "--------------gui------------------
 set guioptions-=m
@@ -199,6 +204,7 @@ endif
 "---------------------YouCompleteMe-------------------------
 "if has("unix")
 
+"    let g:ycm_python_binary_path="/usr/bin/python2.7"
     let g:ycm_max_diagnostics_to_disply = 0
 	nnoremap <c-k> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 	"g:ycm_global_ycm_extra_conf = '/home/...'   "put the default .ycm_extra_conf.py
@@ -244,14 +250,14 @@ endif
 "let g:ctrlp_extensions = ['dir']
 
 "--------------------- fzf -------------------------
-nmap <leader>k :History!<cr>
+nmap <leader>k :FZFMru<cr>
 nmap <leader>b :Buffers!<cr>
-nmap <leader>h :History!:<cr>
+nmap <leader>h :FZFMru<cr>
 nmap <leader>f :FZF! 
 nmap <leader>l :Lines!<cr>
 nmap :: :Commands!<cr>
 imap <c-x><c-l> <plug>(fzf-complete-line)
-
+"
 "--------------------- netrw-------------------------
 let g:netrw_altv          = 1
 let g:netrw_fastbrowse    = 2
@@ -293,12 +299,13 @@ let g:vimwiki_list = [{},wiki_2,wiki_3]
 elseif has("unix")
 
 let wiki_1 = {}
-let wiki_1.path = '/Users/wanghaoxing/vimwiki/vimwiki'
+let wiki_1.path = '~/.vim/vimviki_data'
 
-let wiki_2 = {}
-let wiki_2.path = '/Users/wanghaoxing/vimwiki/vimwiki1'
+"let wiki_2 = {}
+"let wiki_2.path = '/Users/wanghaoxing/vimwiki/vimwiki1'
 
-let g:vimwiki_list = [wiki_1,wiki_2]
+let g:vimwiki_list = [wiki_1]
+"let g:vimwiki_list = [wiki_1,wiki_2]
 endif
 
 "--------------------- xclip -------------------------
@@ -478,3 +485,5 @@ autocmd BufRead,BufWritePost * if &ft == 'cpp' | TlistUpdate  | endif
 "-----------------
 cmap wo windo 
 cmap  <silent> yy let @+=expand("%:p")<CR>
+
+map :ww :AsyncRun wmctrl -x -a  
