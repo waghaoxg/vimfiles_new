@@ -487,3 +487,8 @@ cmap wo windo
 cmap  <silent> yy let @+=expand("%:p")<CR>
 
 map :ww :AsyncRun wmctrl -x -a  
+
+"----terminal-----------
+tmap <C-n> <C-W>N
+map <leader>v "vy
+tmap <C-v> <C-W>"
