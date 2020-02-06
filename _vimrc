@@ -81,6 +81,7 @@ set laststatus=2
 set statusline=%f "tail of the filename
 set undofile
 set undodir=~/undodir
+set switchbuf=useopen,usetab
 "---------------------- set the menu & the message to English----------
 set langmenu=en_US
 let $LANG = 'en_US'
