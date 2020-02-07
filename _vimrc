@@ -493,3 +493,4 @@ map :ww :AsyncRun wmctrl -x -a
 tmap <C-n> <C-W>N
 map <leader>v "vy
 tmap <C-v> <C-W>"
+tmap <leader>: <C-W>:
