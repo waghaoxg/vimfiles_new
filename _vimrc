@@ -9,10 +9,12 @@ if has("win32")
     set guifont=consolas:h11
 elseif has("macunix")
     set guifont=Monaco:h16
+    set undodir=~/.vim/undodir
 elseif has("unix")
     "set guifont=Droid\ Sans\ Mono\ 10
     "set guifont=Monaco:h14
     set guifont=DejaVu\ Sans\ Mono\ 11
+    set undodir=~/.vim/undodir
 endif                                              
 
 syntax on
@@ -81,7 +83,6 @@ set wmw=0
 set laststatus=2
 set statusline=%f "tail of the filename
 set undofile
-set undodir=~/undodir
 set switchbuf=useopen,usetab
 "---------------------- set the menu & the message to English----------
 set langmenu=en_US
