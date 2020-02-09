@@ -51,6 +51,7 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'pbogut/fzf-mru.vim'
 Plugin 'rking/ag.vim'
 Plugin 'kshenoy/vim-signature'
+"Plugin 'roxma/vim-tmux-clipboard'
 "Plugin 'tpope/vim-eunuch'
 "Plugin 'vim-latex/vim-latex'
 "Plugin 'Chiel92/vim-autoformat'
@@ -490,7 +491,10 @@ cmap  <silent> yy let @+=expand("%:p")<CR>
 map :ww :AsyncRun wmctrl -x -a  
 
 "----terminal-----------
+tmap <C-Q> <C-W>:q!<cr>
 tmap <C-n> <C-W>N
 map <leader>v "vy
 tmap <C-v> <C-W>"
 tmap <leader>: <C-W>:
+map :tmx :terminal ++rows=100 ++cols=200 tmux a<cr>
+map :tmn :terminal ++rows=100 ++cols=200<cr>
