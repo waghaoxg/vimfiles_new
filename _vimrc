@@ -10,11 +10,13 @@ if has("win32")
 elseif has("macunix")
     set guifont=Monaco:h16
     set undodir=~/.vim/undodir
+    set clipboard=unnamed
 elseif has("unix")
     "set guifont=Droid\ Sans\ Mono\ 10
     "set guifont=Monaco:h14
     set guifont=DejaVu\ Sans\ Mono\ 11
     set undodir=~/.vim/undodir
+    set clipboard=unnamed
 endif                                              
 
 syntax on
