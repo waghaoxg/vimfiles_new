@@ -16,7 +16,7 @@ elseif has("unix")
     "set guifont=Monaco:h14
     set guifont=DejaVu\ Sans\ Mono\ 11
     set undodir=~/.vim/undodir
-    set clipboard=unnamedplus
+    set clipboard=unnamed
 endif                                              
 
 syntax on
@@ -500,5 +500,5 @@ tmap <C-n> <C-W>N
 map <leader>v "vy
 tmap <C-v> <C-W>"
 tmap <leader>: <C-W>:
-map :tmx :terminal ++rows=100 ++cols=200 tmux a<cr>
-map :tmn :terminal ++rows=100 ++cols=200<cr>
+map <leader>z :terminal ++rows=100 ++cols=200 tmux a<cr>
+map <leader><leader>z :terminal ++rows=100 ++cols=200<cr>
