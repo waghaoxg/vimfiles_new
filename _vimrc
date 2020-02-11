@@ -16,7 +16,7 @@ elseif has("unix")
     "set guifont=Monaco:h14
     set guifont=DejaVu\ Sans\ Mono\ 11
     set undodir=~/.vim/undodir
-    set clipboard=unnamed
+    set clipboard=unnamedplus
 endif                                              
 
 syntax on
