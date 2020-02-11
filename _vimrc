@@ -86,6 +86,7 @@ set laststatus=2
 set statusline=%f "tail of the filename
 set undofile
 set switchbuf=useopen,usetab
+set autoread
 "---------------------- set the menu & the message to English----------
 set langmenu=en_US
 let $LANG = 'en_US'
