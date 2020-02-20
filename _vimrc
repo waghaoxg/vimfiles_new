@@ -76,7 +76,7 @@ set expandtab
 let mapleader = ","
 set backupdir=$HOME/vimbackupfiles//,.,
 set hlsearch
-set wildmode=longest:full
+set wildmode=longest:full,full
 set wildmenu
 set fileencodings=utf-8,cp936,ucs-bom
 set wildignorecase
@@ -462,7 +462,7 @@ let g:airline_section_y = '%{gutentags#statusline()}'
 let g:airline_section_z = '%{ObsessionStatus()}'
 
 "----------choosewin-------------
-nmap \ <Plug>(choosewin)
+nmap <leader>j <Plug>(choosewin)
 let g:choosewin_overlay_enable = 1
 
 "-------------grayout--------------------
