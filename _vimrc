@@ -104,7 +104,9 @@ nmap <silent> <leader>s :call whx#autoMKSession#AutoMKS()<cr>
 
 "--------------layout------------------
 nmap <silent> <C-x> :resize 9999\|vert resize 9999<cr>
+command MM resize | vert resize
 nmap <silent> <C-c> <C-w>=
+command CC normal <C-w>=
 
 "--------------gui------------------
 set guioptions-=m
@@ -490,8 +492,8 @@ nmap gA :exe "tag ".expand('%:t:r').".
 autocmd BufRead,BufWritePost * if &ft == 'cpp' | TlistUpdate  | endif
 
 "-----------------
-cmap wo windo 
-cmap  <silent> yy let @+=expand("%:p")<CR>
+map :wo :windo 
+map  <silent> :yy :let @+=expand("%:p")<CR>
 
 map :ww :AsyncRun wmctrl -x -a  
 
@@ -503,3 +505,6 @@ tmap <C-v> <C-W>"
 tmap <leader>: <C-W>:
 map <leader>z :terminal ++rows=100 ++cols=200 tmux a<cr>
 map <leader><leader>z :terminal ++rows=100 ++cols=200<cr>
+"tmap <C-j> <C-W>:exe "normal \<Plug>(choosewin)"
+""--------vimspector
+"let g:vimspector_enable_mappings = 'HUMAN'
