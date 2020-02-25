@@ -390,7 +390,7 @@ map // <Plug>(easymotion-sn)
 "map // <Plug>(easymotion-s2)
 "map /1 <Plug>(easymotion-s)
 let g:EasyMotion_smartcase = 1
-map <leader>g <Plug>(easymotion-bd-w)
+map <leader>e <Plug>(easymotion-bd-w)
 "map f M<Plug>(easymotion-f)
 "map F <Plug>(easymotion-F)
 "map t <Plug>(easymotion-t)
