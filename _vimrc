@@ -390,7 +390,7 @@ map // <Plug>(easymotion-sn)
 "map // <Plug>(easymotion-s2)
 "map /1 <Plug>(easymotion-s)
 let g:EasyMotion_smartcase = 1
-
+map <leader>g <Plug>(easymotion-bd-w)
 "map f M<Plug>(easymotion-f)
 "map F <Plug>(easymotion-F)
 "map t <Plug>(easymotion-t)
@@ -510,4 +510,4 @@ map <leader><leader>z :terminal ++rows=100 ++cols=200<cr>
 "let g:vimspector_enable_mappings = 'HUMAN'
 "------------
 map <silent>:ccd :cd %:p:h<cr>
-map <leader>g :call cursor(
+map <leader><leader>g :call cursor(
