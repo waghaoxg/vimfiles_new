@@ -494,11 +494,11 @@ autocmd BufRead,BufWritePost * if &ft == 'cpp' | TlistUpdate  | endif
 "-----------------
 map :wo :windo 
 map  <silent> :yy :let @+=expand("%:p")<CR>
-
 map :ww :AsyncRun wmctrl -x -a  
 
 "----terminal-----------
 tmap <C-Q> <C-W>:q!<cr>
+tmap <leader><leader>z <C-W>:q!<cr>
 tmap <C-n> <C-W>N
 map <leader>v "vy
 tmap <C-v> <C-W>"
@@ -508,3 +508,5 @@ map <leader><leader>z :terminal ++rows=100 ++cols=200<cr>
 "tmap <C-j> <C-W>:exe "normal \<Plug>(choosewin)"
 ""--------vimspector
 "let g:vimspector_enable_mappings = 'HUMAN'
+"------------
+map <silent>:ccd :cd %:p:h<cr>
