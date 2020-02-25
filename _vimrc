@@ -510,3 +510,4 @@ map <leader><leader>z :terminal ++rows=100 ++cols=200<cr>
 "let g:vimspector_enable_mappings = 'HUMAN'
 "------------
 map <silent>:ccd :cd %:p:h<cr>
+map <leader>g :call cursor(
