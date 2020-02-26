@@ -446,11 +446,14 @@ let g:UltiSnipsEditSplit="vertical"
 nmap <F6> :!astyle %<cr>
 
 " ------for mulitple copy
-map <leader>y "Ay
+map <leader><leader>y "Ay
 map <leader>ay "ay
 "vmap <leader>as "by"ay:let @a.="/"<cr>
 vmap <silent> <leader>as "dy:let @c="/<c-r>d/"<cr>:let @a="<c-r>c<c-r>b/gc"<cr>
 vmap <silent> <leader>s "by:let @a="<c-r>c<c-r>b/gc"<cr>
+"----------yank and paste by clipbord
+map <leader>p "+p
+map <leader>y "+y
 
 "---------airline--------
 let g:airline#extensions#branch#enabled = 1
