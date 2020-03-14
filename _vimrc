@@ -55,6 +55,8 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'pbogut/fzf-mru.vim'
 Plugin 'rking/ag.vim'
 Plugin 'kshenoy/vim-signature'
+Plugin 'vifm/vifm.vim'
+
 "Plugin 'roxma/vim-tmux-clipboard'
 "Plugin 'tpope/vim-eunuch'
 "Plugin 'vim-latex/vim-latex'
@@ -262,7 +264,7 @@ nmap <leader>k :FZFMru<cr>
 nmap <leader>b :Buffers!<cr>
 nmap <leader>h :History:<cr>
 nmap <leader>f :FZF! 
-nmap <leader>l :Lines!<cr>
+"nmap <leader>l :Lines!<cr>
 nmap <leader>m :Marks<cr>
 nmap :: :Commands!<cr>
 imap <c-x><c-l> <plug>(fzf-complete-line)
@@ -514,3 +516,8 @@ map <leader><leader>z :terminal ++rows=100 ++cols=200<cr>
 "------------
 map <silent>:ccd :cd %:p:h<cr>
 map <leader><leader>g :call cursor(
+
+"-----------vifm----------
+let g:vifm_embed_term=0
+let g:vifm_term='xterm -geometry 640X480 -fa "Monospace" -fs 11 -e'
+nmap <leader>l :TabVifm<cr>
