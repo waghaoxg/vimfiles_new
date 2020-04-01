@@ -520,4 +520,5 @@ map <leader><leader>g :call cursor(
 "-----------vifm----------
 let g:vifm_embed_term=0
 let g:vifm_term='xterm -geometry 640X480 -fa "Monospace" -fs 11 -e'
-nmap <leader>l :TabVifm<cr>
+nmap <leader>l :e \| Vifm<cr>
+nmap <leader><leader>l :Vifm<cr>
