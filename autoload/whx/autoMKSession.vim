@@ -12,3 +12,8 @@ function whx#autoMKSession#AutoMKS()
 		echo "No session file:("
 	endif
 endfunction
+
+function whx#autoMKSession#saveToRegister(string_data)
+    let @f=a:string_data
+    let @+=a:string_data
+endfunction
