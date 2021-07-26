@@ -1,3 +1,6 @@
+"-----------------------add this in bashrc-----------
+"alias gvimr='gvim --remote-tab'
+"alias gvimt='gvim --remote-tab +"execute \"bdelete! \".term_list()[0]"'
 "---------------------- general----------------------
 " for python
 set nocompatible
