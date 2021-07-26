@@ -509,7 +509,8 @@ map <leader>v "vy
 tmap <C-v> <C-W>"
 tmap <leader>: <C-W>:
 map <leader>z :terminal ++rows=100 ++cols=200 tmux a<cr>
-map <leader><leader>z :terminal ++rows=100 ++cols=200<cr>
+map <leader><leader>z :!tmux new-window -c %:p:h<cr>
+"map <leader><leader>z :terminal ++rows=100 ++cols=200<cr>
 "tmap <C-j> <C-W>:exe "normal \<Plug>(choosewin)"
 ""--------vimspector
 "let g:vimspector_enable_mappings = 'HUMAN'
