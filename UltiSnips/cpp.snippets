@@ -38,12 +38,22 @@ snippet header_baidu
 endsnippet
 
 snippet hg "my header guard" b
-#ifndef ${1:AR_VPAS}_`!v toupper(expand("%:t:r"))`_`!v toupper(expand("%:e"))`
-#define $1_`!v toupper(expand("%:t:r"))`_`!v toupper(expand("%:e"))`
+#ifndef `!v toupper(expand("%:p:h:t"))`_`!v toupper(expand("%:t:r"))`_`!v toupper(expand("%:e"))`
+#define `!v toupper(expand("%:p:h:t"))`_`!v toupper(expand("%:t:r"))`_`!v toupper(expand("%:e"))`
 
 ${VISUAL:code here}$0
 
-#endif //$1_`!v toupper(expand("%:t:r"))`_`!v toupper(expand("%:e"))`
+#endif //`!v toupper(expand("%:p:h:t"))`_`!v toupper(expand("%:t:r"))`_`!v toupper(expand("%:e"))`
+endsnippet
+
+
+snippet hhg "my header guard" b
+#ifndef `!v toupper(expand("%:p:h:h:t"))`_`!v toupper(expand("%:p:h:t"))`_`!v toupper(expand("%:t:r"))`_`!v toupper(expand("%:e"))`
+#define `!v toupper(expand("%:p:h:h:t"))`_`!v toupper(expand("%:p:h:t"))`_`!v toupper(expand("%:t:r"))`_`!v toupper(expand("%:e"))`
+
+${VISUAL:code here}$0
+
+#endif //`!v toupper(expand("%:p:h:h:t"))`_`!v toupper(expand("%:p:h:t"))`_`!v toupper(expand("%:t:r"))`_`!v toupper(expand("%:e"))`
 endsnippet
 
 snippet hg_artracker "my header guard" b
