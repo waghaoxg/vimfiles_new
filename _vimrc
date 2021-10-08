@@ -25,6 +25,7 @@ endif
 syntax on
 set showcmd
 "---------vundle------------------
+set encoding=utf-8
 filetype off                  " required
 set rtp+=~/.fzf
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -245,7 +246,10 @@ endif
 "	let g:ycm_path_to_python_interpreter='/System/Library/Frameworks/Python.framework/Versions/2.7/bin/python'
   let g:ycm_key_invoke_completion = '<C-k>'
   let g:ycm_always_populate_location_list = 1
+
 "endif
+
+  nmap <leader>g :YcmCompleter GoToSymbol 
 
 "---------------------sticky notes-------------------------
 "if has("win32")
@@ -526,3 +530,10 @@ let g:vifm_embed_term=0
 let g:vifm_term='xterm -geometry 640X480 -fa "Monospace" -fs 11 -e'
 nmap <leader>l :e \| Vifm<cr>
 nmap <leader><leader>l :Vifm<cr>
+
+""add to .bashrc
+"alias gvimr='gvim --remote-tab'
+"alias gvimt='gvim --remote-tab +"execute \"bdelete! \".term_list()[0]"'
+"alias pbcopy='xclip -selection clipbroad'
+"alias pbpaste='xclip -selection clipbroad -o'
+"alias tmc='tmux save-buffer - | xclip -i -selection clipbroad'
