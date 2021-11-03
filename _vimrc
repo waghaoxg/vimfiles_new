@@ -30,7 +30,7 @@ filetype off                  " required
 set rtp+=~/.fzf
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
+"Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'skywind3000/asyncrun.vim'
 "Plugin 'kien/ctrlp.vim'
@@ -532,8 +532,11 @@ nmap <leader>l :e \| Vifm<cr>
 nmap <leader><leader>l :Vifm<cr>
 
 ""add to .bashrc
-"alias gvimr='gvim --remote-tab'
-"alias gvimt='gvim --remote-tab +"execute \"bdelete! \".term_list()[0]"'
+"alias gvim='/home/wanghaox/install/vim/bin/gvim'
+"alias gvimr='/home/wanghaox/install/vim/bin/gvim --remote-tab'
+"alias rgvim='/home/wanghaox/install/vim/bin/gvim;exit'
+"alias gvimt='/home/wanghaox/install/vim/bin/gvim --remote-tab +"execute \"bdelete! \".term_list()[0]"'
 "alias pbcopy='xclip -selection clipbroad'
 "alias pbpaste='xclip -selection clipbroad -o'
 "alias tmc='tmux save-buffer - | xclip -i -selection clipbroad'
+"alias rchrome='google-chrome;exit'
