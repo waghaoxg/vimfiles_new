@@ -514,7 +514,7 @@ map :ww :AsyncRun wmctrl -x -a
 "
 function OpenTmuxTerminal()
     let l:tmux_buf_id=term_start('tmux a', {'term_rows':60})
-    call term_wait(l:tmux_buf_id, 100)
+    call term_wait(l:tmux_buf_id, 300)
     let l:tmux_status=term_getstatus(l:tmux_buf_id)
     if l:tmux_status == 'finished'
        execute 'bdelete '..l:tmux_buf_id
