@@ -554,3 +554,10 @@ nmap <leader><leader>l :Vifm<cr>
 "alias pbpaste='xclip -selection clipbroad -o'
 "alias tmc='tmux save-buffer - | xclip -i -selection clipbroad'
 "alias rchrome='google-chrome;exit'
+
+""ubuntu desktop launch
+"[Desktop Entry]
+"Exec=/home/whx/code/vim/install_dir/bin/gvim
+"Type=Application
+"Name=gvim
+"Icon=gvim
