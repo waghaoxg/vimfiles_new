@@ -554,6 +554,7 @@ nmap <leader><leader>l :Vifm<cr>
 "alias pbpaste='xclip -selection clipbroad -o'
 "alias tmc='tmux save-buffer - | xclip -i -selection clipbroad'
 "alias rchrome='google-chrome;exit'
+"alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 ""ubuntu desktop launch
 "[Desktop Entry]
@@ -561,3 +562,10 @@ nmap <leader><leader>l :Vifm<cr>
 "Type=Application
 "Name=gvim
 "Icon=gvim
+
+"----------------rifle.conf---------------
+"mime ^text,  label editor = gvim --remote-tab +"execute \"bdelete! \".term_list()[0] " "$@"
+"
+"!mime ^text, label editor, ext xml|csv|tex|py|pl|rb|js|sh|php = gvim --remote-tab +"execute \"bdelete! \".term_list()[0] " "$@"
+"
+"label editor, !mime ^text, !ext xml|csv|tex|py|pl|rb|js|sh|php  = gvim --remote-tab +"execute \"bdelete! \".term_list()[0] " "$@"
