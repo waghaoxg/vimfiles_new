@@ -4,6 +4,7 @@
 "---------------------- general----------------------
 " for python
 set nocompatible
+
 if has("win32")
 	source $VIMRUNTIME/vimrc_example.vim
 " source $VIMRUNTIME/mswin.vim  don't use Ctrl+C Ctrl+V ...
@@ -476,7 +477,8 @@ let g:airline_section_y = '%{gutentags#statusline()}'
 let g:airline_section_z = '%{ObsessionStatus()}'
 
 "----------choosewin-------------
-nmap <leader>j <Plug>(choosewin)
+"nmap <leader>j <Plug>(choosewin)
+nmap <leader>q <Plug>(choosewin)
 let g:choosewin_overlay_enable = 1
 
 "-------------grayout--------------------
@@ -509,13 +511,25 @@ map  <silent> :yy :let @+=expand("%:p")<CR>
 map :ww :AsyncRun wmctrl -x -a  
 
 "----terminal-----------
+"
+function OpenTmuxTerminal()
+    let l:tmux_buf_id=term_start('tmux a', {'term_rows':60})
+    call term_wait(l:tmux_buf_id, 100)
+    let l:tmux_status=term_getstatus(l:tmux_buf_id)
+    if l:tmux_status == 'finished'
+       execute 'bdelete '..l:tmux_buf_id
+       call term_start('tmux', {'term_rows':60})
+    endif
+endfunction
+
 tmap <C-Q> <C-W>:q!<cr>
 tmap <leader><leader>z <C-W>:q!<cr>
 tmap <C-n> <C-W>N
 map <leader>v "vy
 tmap <C-v> <C-W>"
 tmap <leader>: <C-W>:
-map <leader>z :terminal ++rows=100 ++cols=200 tmux a<cr>
+"map <leader>z :terminal ++rows=100 ++cols=200 tmux a<cr>
+map <silent> <leader>z :call OpenTmuxTerminal()<cr>
 map <leader><leader>z :!tmux new-window -c %:p:h<cr>
 "map <leader><leader>z :terminal ++rows=100 ++cols=200<cr>
 "tmap <C-j> <C-W>:exe "normal \<Plug>(choosewin)"
