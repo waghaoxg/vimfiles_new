@@ -61,7 +61,7 @@ Plugin 'pbogut/fzf-mru.vim'
 Plugin 'rking/ag.vim'
 Plugin 'kshenoy/vim-signature'
 Plugin 'vifm/vifm.vim'
-
+Plugin 'rhysd/vim-clang-format'
 "Plugin 'roxma/vim-tmux-clipboard'
 "Plugin 'tpope/vim-eunuch'
 "Plugin 'vim-latex/vim-latex'
