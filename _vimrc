@@ -550,6 +550,8 @@ nmap <leader><leader>l :Vifm<cr>
 "alias gvimr='/home/wanghaox/install/vim/bin/gvim --remote-tab'
 "alias rgvim='/home/wanghaox/install/vim/bin/gvim;exit'
 "alias gvimt='/home/wanghaox/install/vim/bin/gvim --remote-tab +"execute \"bdelete! \".term_list()[0]"'
+"alias vimt='vim --remote-tab'
+"alias vims='vim --servername VIM'
 "alias pbcopy='xclip -selection clipbroad'
 "alias pbpaste='xclip -selection clipbroad -o'
 "alias tmc='tmux save-buffer - | xclip -i -selection clipbroad'
