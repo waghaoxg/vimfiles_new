@@ -555,6 +555,11 @@ nmap <leader><leader>l :Vifm<cr>
 "alias tmc='tmux save-buffer - | xclip -i -selection clipbroad'
 "alias rchrome='google-chrome;exit'
 "alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+"alias x2x0='x2x -to :0'
+"alias x2x0s='x2x -to :0 -south'
+"alias x2x0n='x2x -to :0 -north'
+"alias x2x0e='x2x -to :0 -east'
+"alias x2x0w='x2x -to :0 -west'
 
 ""ubuntu desktop launch
 "[Desktop Entry]
