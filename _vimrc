@@ -25,13 +25,24 @@ endif
 
 syntax on
 set showcmd
-"---------vundle------------------
-set encoding=utf-8
-filetype off                  " required
+
 set rtp+=~/.fzf
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-"Plugin 'VundleVim/Vundle.vim'
+"------vim-plug---------------------
+"install
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+"set
+if has("unix")
+	call plug#begin('~/.vim/bundle	')
+elseif has("macunix")
+	call plug#begin('~/.vim/bundle')
+elseif has("win32")
+	call plug#begin('~/vimfile/bundle')
+endif
+"Plug 'junegunn/vim-plug'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'skywind3000/asyncrun.vim'
 "Plugin 'kien/ctrlp.vim'
@@ -66,10 +77,52 @@ Plugin 'rhysd/vim-clang-format'
 "Plugin 'tpope/vim-eunuch'
 "Plugin 'vim-latex/vim-latex'
 "Plugin 'Chiel92/vim-autoformat'
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
+call plug#end()
+
+"---------vundle------------------
+" set encoding=utf-8
+" filetype off                  " required
+" set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#begin()
+" "Plugin 'VundleVim/Vundle.vim'
+" Plugin 'Valloric/YouCompleteMe'
+" Plugin 'skywind3000/asyncrun.vim'
+" "Plugin 'kien/ctrlp.vim'
+" Plugin 'haya14busa/incsearch.vim'
+" Plugin 'haya14busa/incsearch-fuzzy.vim'
+" Plugin 'haya14busa/vim-asterisk'
+" Plugin 'SirVer/ultisnips'
+" Plugin 'easymotion/vim-easymotion'
+" Plugin 'tpope/vim-fugitive'
+" Plugin 'tpope/vim-surround'
+" Plugin 'dhruvasagar/vim-table-mode'
+" Plugin 'vimwiki/vimwiki'
+" Plugin 'vim-airline/vim-airline'
+" Plugin 'luochen1990/rainbow'
+" Plugin 'taglist.vim'
+" Plugin 'mphe/grayout.vim'
+" Plugin 'junegunn/fzf.vim'
+" Plugin 'tpope/vim-obsession'
+" Plugin 't9md/vim-choosewin'
+" Plugin 'lervag/vimtex'
+" Plugin 'ludovicchabant/vim-gutentags'
+" Plugin 'mhinz/vim-signify'
+" Plugin 'vim-scripts/Tabmerge'
+" Plugin 'mkitt/tabline.vim'
+" Plugin 'tpope/vim-vinegar'
+" Plugin 'pbogut/fzf-mru.vim'
+" Plugin 'rking/ag.vim'
+" Plugin 'kshenoy/vim-signature'
+" Plugin 'vifm/vifm.vim'
+" Plugin 'rhysd/vim-clang-format'
+" "Plugin 'roxma/vim-tmux-clipboard'
+" "Plugin 'tpope/vim-eunuch'
+" "Plugin 'vim-latex/vim-latex'
+" "Plugin 'Chiel92/vim-autoformat'
+" call vundle#end()            " required
+" filetype plugin indent on    " required
+" " To ignore plugin indent changes, instead use:
+" "filetype plugin on
 
 "------- basic---------------------
 set ignorecase
