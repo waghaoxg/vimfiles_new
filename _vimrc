@@ -273,6 +273,7 @@ endif
 "if has("unix")
 
 "    let g:ycm_python_binary_path="/usr/bin/python2.7"
+    let g:ycm_confirm_extra_conf = 0
     let g:ycm_max_diagnostics_to_disply = 0
 	nnoremap <c-k> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 	"g:ycm_global_ycm_extra_conf = '/home/...'   "put the default .ycm_extra_conf.py
