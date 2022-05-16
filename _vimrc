@@ -160,7 +160,7 @@ nmap <F12> :vs $MYVIMRC<cr>
 
 "--------------auto makeSession------------------
 "autocmd VimLeave * call whx#autoMKSession#AutoMKS()
-nmap <silent> <leader>s :call whx#autoMKSession#AutoMKS()<cr>
+"nmap <silent> <leader>s :call whx#autoMKSession#AutoMKS()<cr>
 
 "--------------layout------------------
 nmap <silent> <C-x> :resize 9999\|vert resize 9999<cr>
@@ -606,6 +606,7 @@ nmap <leader><leader>l :Vifm<cr>
 "alias gvimt='/home/wanghaox/install/vim/bin/gvim --remote-tab +"execute \"bdelete! \".term_list()[0]"'
 "alias vimt='vim --remote-tab'
 "alias vims='vim --servername VIM'
+"alias vimm='vim -c FZFMru'
 "alias pbcopy='xclip -selection clipbroad'
 "alias pbpaste='xclip -selection clipbroad -o'
 "alias tmc='tmux save-buffer - | xclip -i -selection clipbroad'
@@ -629,4 +630,8 @@ nmap <leader><leader>l :Vifm<cr>
 "
 "!mime ^text, label editor, ext xml|csv|tex|py|pl|rb|js|sh|php = gvim --remote-tab +"execute \"bdelete! \".term_list()[0] " "$@"
 "
+
+"
+"nmap <silent> <leader>s :source ~/Session.vim<cr>
+"autocmd VimEnter * source ~/Session.vim 
 "label editor, !mime ^text, !ext xml|csv|tex|py|pl|rb|js|sh|php  = gvim --remote-tab +"execute \"bdelete! \".term_list()[0] " "$@"
