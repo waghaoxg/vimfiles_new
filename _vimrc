@@ -237,7 +237,7 @@ elseif has("unix")
 	set grepprg=grep\ -nrH\ --exclude=Session.vim\ --exclude=viminfo\ $*
 endif
 
-command WW vimgrep <cword> %<cr> 
+command WW vimgrep <cword> % | cw
 
 "
 "" OPTIONAL: This enables automatic indentation as you type.  
