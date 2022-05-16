@@ -71,7 +71,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'pbogut/fzf-mru.vim'
 Plug 'rking/ag.vim'
 Plug 'kshenoy/vim-signature'
-Plug 'vifm/vifm.vim'
+"Plug 'vifm/vifm.vim'
 Plug 'rhysd/vim-clang-format'
 "Plugin 'roxma/vim-tmux-clipboard'
 "Plugin 'tpope/vim-eunuch'
@@ -326,7 +326,7 @@ nmap <leader>k :FZFMru<cr>
 nmap <leader>b :Buffers!<cr>
 nmap <leader>h :History:<cr>
 nmap <leader>f :FZF! 
-"nmap <leader>l :Lines!<cr>
+nmap <leader>l :Lines!<cr>
 nmap <leader>m :Marks<cr>
 nmap :: :Commands!<cr>
 imap <c-x><c-l> <plug>(fzf-complete-line)
@@ -593,11 +593,11 @@ map <leader><leader>z :!tmux new-window -c %:p:h<cr>
 map <silent>:ccd :cd %:p:h<cr>
 map <leader><leader>g :call cursor(
 
-"-----------vifm----------
-let g:vifm_embed_term=0
-let g:vifm_term='xterm -geometry 640X480 -fa "Monospace" -fs 11 -e'
-nmap <leader>l :e \| Vifm<cr>
-nmap <leader><leader>l :Vifm<cr>
+" "-----------vifm----------
+" let g:vifm_embed_term=0
+" let g:vifm_term='xterm -geometry 640X480 -fa "Monospace" -fs 11 -e'
+" nmap <leader>l :e \| Vifm<cr>
+" nmap <leader><leader>l :Vifm<cr>
 
 ""add to .bashrc
 "alias gvim='/home/wanghaox/install/vim/bin/gvim'
