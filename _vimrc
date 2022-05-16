@@ -324,10 +324,11 @@ endif
 "--------------------- fzf -------------------------
 nmap <leader>k :FZFMru<cr>
 nmap <leader>b :Buffers!<cr>
-nmap <leader>h :History:<cr>
+nmap <leader>h :History:!<cr>
 nmap <leader>f :FZF! 
 nmap <leader>l :BLines!<cr>
-nmap <leader>m :Marks<cr>
+nmap <leader>m :Marks!<cr>
+nmap <leader>T :BTags!<cr>
 nmap :: :Commands!<cr>
 imap <c-x><c-l> <plug>(fzf-complete-line)
 "
@@ -398,9 +399,9 @@ let Tlist_Use_Right_Window = 1
 "let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 let Tlist_Show_One_File = 1
 let Tlist_GainFocus_On_ToggleOpen= 1
-nmap <leader>t :TlistOpen<cr>
-nmap <leader>T :TlistClose<cr>
-set statusline=%([%{Tlist_Get_Tagname_By_Line()}][%f]%)
+" nmap <leader>t :TlistOpen<cr>
+" nmap <leader>T :TlistClose<cr>
+" set statusline=%([%{Tlist_Get_Tagname_By_Line()}][%f]%)
 
 map <silent> [[ :TlistOpen<cr><cr>:TlistClose<cr>
 map <silent> ]] :TlistOpen<cr><cr>:TlistClose<cr>/{<cr>:nohlsearch<cr>%
