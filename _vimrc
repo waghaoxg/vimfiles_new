@@ -236,6 +236,9 @@ if has("win32")
 elseif has("unix")
 	set grepprg=grep\ -nrH\ --exclude=Session.vim\ --exclude=viminfo\ $*
 endif
+
+command WW vimgrep <cword> %<cr> 
+
 "
 "" OPTIONAL: This enables automatic indentation as you type.  
 "filetype indent on
@@ -558,7 +561,7 @@ nmap gA :exe "tag ".expand('%:t:r').".
 "nmap <leader>v :NERDTreeToggle<cr>
 
 "--------autocommand--------
-autocmd BufRead,BufWritePost * if &ft == 'cpp' | TlistUpdate  | endif
+ autocmd BufRead,BufWritePost * if &ft == 'cpp' | TlistUpdate  | endif
 
 "-----------------
 map :wo :windo 
