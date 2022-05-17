@@ -325,6 +325,7 @@ endif
 "let g:ctrlp_extensions = ['dir']
 
 "--------------------- fzf -------------------------
+let g:fzf_layout = {'down': '~100%'}
 nmap <leader>k :FZFMru<cr>
 nmap <leader>b :Buffers!<cr>
 nmap <leader>h :History:!<cr>
