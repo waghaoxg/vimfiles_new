@@ -561,7 +561,7 @@ nmap gA :exe "tag ".expand('%:t:r').".
 "nmap <leader>v :NERDTreeToggle<cr>
 
 "--------autocommand--------
- autocmd BufRead,BufWritePost * if &ft == 'cpp' | TlistUpdate  | endif
+autocmd BufRead,BufWritePost * if &ft == 'cpp' | TlistUpdate  | endif
 
 "-----------------
 map :wo :windo 
