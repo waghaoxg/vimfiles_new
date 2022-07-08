@@ -616,7 +616,7 @@ map <leader><leader>g :call cursor(
 "alias pbpaste='xclip -selection clipbroad -o'
 "alias tmc='tmux save-buffer - | xclip -i -selection clipbroad'
 "alias rchrome='google-chrome;exit'
-"alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+"alias z='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 "alias x2x0='x2x -to :0'
 "alias x2x0s='x2x -to :0 -south'
 "alias x2x0n='x2x -to :0 -north'
