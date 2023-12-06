@@ -644,4 +644,4 @@ map <leader><leader>g :call cursor(
 
 "----------------mermaid ---------------
 map :mp :AsyncRun mmdc -i %:p -o %:p.png -s 1<cr>
-map :ms :AsyncRun mmdc -i %:p -o %:p.png -s 
+map :ms :AsyncRun mmdc -i %:p -o %:p.png -b transparent -t neutral -s 
