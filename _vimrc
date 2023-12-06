@@ -40,7 +40,7 @@ if has("unix")
 elseif has("macunix")
 	call plug#begin('~/.vim/bundle')
 elseif has("win32")
-	call plug#begin('~/vimfile/bundle')
+	call plug#begin('~/vimfiles/bundle')
 endif
 "Plug 'junegunn/vim-plug'
 Plug 'Valloric/YouCompleteMe'
@@ -77,6 +77,7 @@ Plug 'rhysd/vim-clang-format'
 "Plugin 'tpope/vim-eunuch'
 "Plugin 'vim-latex/vim-latex'
 "Plugin 'Chiel92/vim-autoformat'
+Plug 'craigmac/vim-mermaid'
 call plug#end()
 
 "---------vundle------------------
@@ -640,3 +641,7 @@ map <leader><leader>g :call cursor(
 "nmap <silent> <leader>s :source ~/Session.vim<cr>
 "autocmd VimEnter * source ~/Session.vim 
 "label editor, !mime ^text, !ext xml|csv|tex|py|pl|rb|js|sh|php  = gvim --remote-tab +"execute \"bdelete! \".term_list()[0] " "$@"
+
+"----------------mermaid ---------------
+map :mp :AsyncRun mmdc -i %:p -o %:p.png -s 1<cr>
+map :ms :AsyncRun mmdc -i %:p -o %:p.png -s 
